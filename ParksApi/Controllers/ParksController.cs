@@ -22,10 +22,35 @@ namespace ParksApi.Controllers
 
         // GET: api/Parks
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Park>>> GetParks()
+        public async Task<ActionResult<IEnumerable<Park>>> Get(string name, string state, string type, string description)
         {
-            return await _context.Parks.ToListAsync();
+            IQueryable<Park> query = _context.Parks.AsQueryable();
+
+            int limit = 5;
+
+            if (name != null)
+            {
+                query = query.Where(entry => entry.Name.Contains(name));
+            }
+
+            if (state != null)
+            {
+                query = query.Where(entry => entry.State == state);
+            }
+
+            if (type != null)
+            {
+                query = query.Where(entry => entry.Type == type);
+            }
+
+            if (description != null)
+            {
+                query = query.Where(entry => entry.Description.Contains(description));
+            }
+
+            return await query.Take(limit).ToListAsync();
         }
+
 
         // GET: api/Parks/5
         [HttpGet("{id}")]
