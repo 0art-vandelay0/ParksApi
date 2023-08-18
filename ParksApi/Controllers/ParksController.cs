@@ -22,13 +22,11 @@ namespace ParksApi.Controllers
 
         // GET: api/Parks
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Park>>> Get(string name, string state, string type, string description)
+        public async Task<ActionResult<IEnumerable<Park>>> Get(string name, string state, string type, string description, int page = 1, int pageSize = 10)
         {
+
             IQueryable<Park> query = _context.Parks.AsQueryable();
 
-            // int limit = int.Parse(Request.Query["limit"]);
-
-            int limit = 50;
 
             if (name != null)
             {
@@ -50,7 +48,9 @@ namespace ParksApi.Controllers
                 query = query.Where(entry => entry.Description.Contains(description));
             }
 
-            return await query.Take(limit).ToListAsync();
+            int skip = (page - 1) * pageSize;
+
+            return await query.Skip(skip).Take(pageSize).ToListAsync();
         }
 
 
