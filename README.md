@@ -86,7 +86,7 @@ Use a tool like Postman or Swagger to access the Api. See below for documentatio
     $ dotnet run
     ```
 
-    (or `dotnet watch run` to see edit and see edits in real time).
+    (or `dotnet watch run` to avoid reloading with edits in real time, and have Swagger open).
 
 -   A web page will automatically open in your browser at port 5000 or 5001
 </details>
@@ -98,14 +98,25 @@ Use a tool like Postman or Swagger to access the Api. See below for documentatio
 <details>
 <summary>Endpoints</summary>
 
-<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/
-<br>
-<span style="color: green; font-style: italic;">POST</span> /api/
-<br>
-<span style="color: orange; font-style: italic;">PUT</span> /api/
-<br>
-<span style="color: red; font-style: italic;">DELETE</span> /api/
-<br>
+<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks <br>
+
+-   Search for parks by name, state, type, and description. The program will search using keyword. <br>For example, `https://localhost:5001/api/Parks?description=murder` will return the result:
+    <pre><code>[
+        {
+            "parkId": 11,
+            "name": "Starved Rock State Park",
+            "state": "Illinois",
+            "type": "State",
+            "description": "Located near Utica, Starved Rock is one of Illinois' most famous nbspparks. It features scenic canyons, waterfalls, and hiking trails along the Illinois River. It is also the location of a famed murder mystery."
+        }
+    ]</code></pre>
+    <br>
+    <span style="color: green; font-style: italic;">POST</span> /api/parks
+    <br>
+    <span style="color: orange; font-style: italic;">PUT</span> /api/parks
+    <br>
+    <span style="color: red; font-style: italic;">DELETE</span> /api/parks
+    <br>
 
 </details>
 
