@@ -1,12 +1,12 @@
-# &#x1F408; Cat Breeds &#x1F408;
+# &#x1F332; <span style="font-family: sans-serif; text-shadow: 2px 2px 4px black;">US Parks</span> &#x1F332;
 
-### A Cat Breed API
+### US Parks API
 
-#### _By_ Casey Hill
+&nbsp;&nbsp;&nbsp;&nbsp;A simple Api that connects you to different US National & State parks.
 
-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_By_ Casey Hill
 
-##### ...._"Parks and public spaces are the antidote to a contentious world."_ - Frits van Paasschen
+##### ....<span style="color: rgb(33, 112, 19); text-shadow: 2px 2px 4px black; font-style: italic;">_"Parks and public spaces are the antidote to a contentious world."_ - Frits van Paasschen</span>
 
 ## **Technologies Used**
 
@@ -23,9 +23,8 @@
 
 ## **Description**
 
-A Park Searchable Api that contains a list of US National Parks and State Parks.
+A Searchable Park Api that contains a list of US National Parks and State Parks.
 Use a tool like Postman or Swagger to access the Api. See below for documentation and endpoints.
-
 <br>
 
 ## **Setup/Installation Requirements** &#x1F4BB;
