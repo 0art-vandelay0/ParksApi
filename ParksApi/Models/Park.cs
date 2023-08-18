@@ -11,11 +11,12 @@ namespace ParksApi.Models
         public string Name { get; set; }
 
         [Required]
-        [StringLength(13, MinimumLength = 2, ErrorMessage = "Must be between 2 and 13 characters.")] // longest existing state name is 13 characters || include min of state code
+        [StringLength(14, MinimumLength = 2, ErrorMessage = "Must be between 2 and 13 characters.")] // longest existing state name is 14 characters || include min of state code
         public string State { get; set; }
 
         [Required]
-        [ValidParkType(ErrorMessage = "Enter either 'National' or 'State'.")]
+        // [ValidParkType(ErrorMessage = "Enter either 'National' or 'State'.")]
+        [RegularExpression("^(National|State)$", ErrorMessage = "Valid values are 'National' or 'State' (case-insensitive)")]
         public string Type { get; set; }
 
         [Required]
