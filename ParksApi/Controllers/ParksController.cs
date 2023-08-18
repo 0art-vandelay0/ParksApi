@@ -26,7 +26,9 @@ namespace ParksApi.Controllers
         {
             IQueryable<Park> query = _context.Parks.AsQueryable();
 
-            int limit = 5;
+            // int limit = int.Parse(Request.Query["limit"]);
+
+            int limit = 50;
 
             if (name != null)
             {
