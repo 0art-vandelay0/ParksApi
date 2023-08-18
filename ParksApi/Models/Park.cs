@@ -11,7 +11,7 @@ namespace ParksApi.Models
         public string Name { get; set; }
 
         [Required]
-        [StringLength(14, MinimumLength = 2, ErrorMessage = "Must be between 2 and 13 characters.")] // longest existing state name is 14 characters || include min of state code
+        [StringLength(20, MinimumLength = 2, ErrorMessage = "Must be between 2 and 20 characters.")] // District of Columbia at 20 char || include min of 2 char state code
         public string State { get; set; }
 
         [Required]
