@@ -130,5 +130,16 @@ namespace ParksApi.Controllers
         {
             return _context.Parks.Any(e => e.ParkId == id);
         }
+
+        // GET: api/Parks/random
+        [HttpGet("random")]
+        public async Task<ActionResult<Park>> GetRandomPark()
+        {
+            var count = await _context.Parks.CountAsync();
+            var random = new Random();
+            var index = random.Next(count);
+            var park = await _context.Parks.Skip(index).FirstOrDefaultAsync();
+            return park;
+        }
     }
 }
