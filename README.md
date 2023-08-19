@@ -112,7 +112,7 @@ Use a tool like Postman or Swagger to access the Api. See below for documentatio
 
 -   Returns all parks (10 responses per page)
 
-### Query by parameter:
+#### Query by parameter:
 
 #### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/name <br>
 
@@ -142,6 +142,12 @@ Search for parks by name, state, type, and description. The program will search 
 <summary><span style="color: orange; font-style: italic;">PUT</span></summary>
 <br>
 <span style="color: orange; font-style: italic;">PUT</span> /api/parks
+<br><br>
+
+Edit the details of a Park object.
+Always signify the `parkId` of the targeted object. <br>For example, to edit <span style="color: orange; font-style: italic;">&nbsp;PUT&nbsp;</span> `http://localhost:5000/api/parks/1`:
+
+<img src="img/put.jpg" alt="example api response" width="300">
 <br><br>
 </details>
 <details>
@@ -189,7 +195,7 @@ Search for parks by name, state, type, and description. The program will search 
 
 ## **Known Bugs**
 
-no, Parks.
+-   This program does not currently use authorization and authentication to access API. Be cautious when using and sharing this program.
 
 <br>
 
