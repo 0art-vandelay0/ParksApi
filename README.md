@@ -102,38 +102,53 @@ Use a tool like Postman or Swagger to access the Api. See below for documentatio
 -   `description`
 
 <br>
+
+### Endpoints
+
 <details>
-<summary>Endpoints</summary>
+<summary><span style="color: rgb(3, 132, 252); font-style: italic;">GET</span></summary>
 
-<br>
-
-### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks <br>
+#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks <br>
 
 -   Returns all parks (10 responses per page)
 
-### Search by parameter:
+### Query by parameter:
+
+#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/name <br>
+
+#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/state <br>
+
+#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/type <br>
+
+#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/description <br>
 
 Search for parks by name, state, type, and description. The program will search using keyword and return any Park where the keyword is found in the parameter. <br>For example, `https://localhost:5001/api/Parks?description=murder` will return the result:
-![example api response](img/description.png)
 
-### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/ <br>
+<img src="img/description.jpg" alt="example api response" width="300">
+<br>
+</details>
 
-<pre><code>[
-{
-"parkId": 11,
-"name": "Starved Rock State Park",
-"state": "Illinois",
-"type": "State",
-"description": "Located near Utica, Starved Rock is one of Illinois' most famous nbspparks. It features scenic canyons, waterfalls, and hiking trails along the Illinois River. It is also the location of a famed murder mystery."
-}
-]</code></pre>
+<details>
+<summary><span style="color: green; font-style: italic;">POST</span></summary>
 <br>
 <span style="color: green; font-style: italic;">POST</span> /api/parks
+<br>Create a new Park object in the body in JSON format:
+<br><br>
+<img src="img/post.jpg" alt="example api response" width="300">
+<br><br>
+</details>
+
+<details>
+<summary><span style="color: orange; font-style: italic;">PUT</span></summary>
 <br>
 <span style="color: orange; font-style: italic;">PUT</span> /api/parks
+<br><br>
+</details>
+<details>
+<summary><span style="color: red; font-style: italic;">DELETE</span></summary>
 <br>
 <span style="color: red; font-style: italic;">DELETE</span> /api/parks
-<br>
+<br><br>
 
 </details>
 
