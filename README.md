@@ -96,6 +96,7 @@ Use a tool like Postman or Swagger to access the Api. See below for documentatio
 
 ### Query Parameters
 
+-   `parkId`
 -   `name`
 -   `state`
 -   `type` (this is either 'State' or 'National')
@@ -114,15 +115,15 @@ Use a tool like Postman or Swagger to access the Api. See below for documentatio
 
 #### Query by parameter:
 
-#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/name <br>
+#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks?name={name} <br>
 
-#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/state <br>
+#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks?state={state} <br>
 
-#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/type <br>
+#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks?type={type} <br>
 
-#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/description <br>
+#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks?description={keyword} <br>
 
-Search for parks by name, state, type, and description. The program will search using keyword and return any Park where the keyword is found in the parameter. <br>For example, `https://localhost:5001/api/Parks?description=murder` will return the result:
+Search for parks by name, state, type, and description. The program will search using keyword and return any Park where the keyword is found in the parameter query. <br>For example,<span style="color: rgb(3, 132, 252); font-style: italic;">&nbsp;GET&nbsp;</span> `https://localhost:5001/api/Parks?description=murder` will return the result:
 
 <img src="img/description.jpg" alt="example api response" width="300">
 <br>
@@ -132,20 +133,21 @@ Search for parks by name, state, type, and description. The program will search 
 <summary><span style="color: green; font-style: italic;">POST</span></summary>
 <br>
 <span style="color: green; font-style: italic;">POST</span> /api/parks
-<br>Create a new Park object in the body in JSON format:
+<br><br>Create a new Park object in the body in JSON format:
 <br><br>
-<img src="img/post.jpg" alt="example api response" width="300">
+<img src="img/post.jpg" alt="example api response" width="300"><br>
+**Check for error messages that might fail validation
 <br><br>
 </details>
 
 <details>
 <summary><span style="color: orange; font-style: italic;">PUT</span></summary>
 <br>
-<span style="color: orange; font-style: italic;">PUT</span> /api/parks
+<span style="color: orange; font-style: italic;">PUT</span> /api/parks/{parkId}
 <br><br>
 
 Edit the details of a Park object.
-Always signify the `parkId` of the targeted object. <br>For example, to edit <span style="color: orange; font-style: italic;">&nbsp;PUT&nbsp;</span> `http://localhost:5000/api/parks/1`:
+Always signify the `parkId` of the targeted object <br>For example, to edit Park object with `parkId` 1:<br><span style="color: orange; font-style: italic;">&nbsp;PUT&nbsp;</span> `http://localhost:5000/api/parks/1`:
 
 <img src="img/put.jpg" alt="example api response" width="300">
 <br><br>
@@ -153,8 +155,14 @@ Always signify the `parkId` of the targeted object. <br>For example, to edit <sp
 <details>
 <summary><span style="color: red; font-style: italic;">DELETE</span></summary>
 <br>
-<span style="color: red; font-style: italic;">DELETE</span> /api/parks
+<span style="color: red; font-style: italic;">DELETE</span> /api/parks/{parkId}
 <br><br>
+
+Delete a Park object.
+Enter the value of the target Park object's `parkId`. For example to delete object with parkId 16:
+<br><span style="color: red; font-style: italic;">&nbsp;DELETE&nbsp;</span> `http://localhost:5000/api/parks/16`:
+<br><br>
+<img src="img/delete.jpg" alt="example api response" width="300">
 
 </details>
 
@@ -190,8 +198,13 @@ Always signify the `parkId` of the targeted object. <br>For example, to edit <sp
     </code></pre>
 
 </details>
-
+<details>
 <br>
+<summary> If 404 Bad Request...</summary>
+
+-   Check the error message in response body. Parameters are bound to validation. The error type will tell you if you need to follow a standard.
+<br>
+</details>
 
 ## **Known Bugs**
 
