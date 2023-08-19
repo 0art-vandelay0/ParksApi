@@ -94,28 +94,46 @@ Use a tool like Postman or Swagger to access the Api. See below for documentatio
 
 ## API
 
+### Query Parameters
+
+-   `name`
+-   `state`
+-   `type` (this is either 'State' or 'National')
+-   `description`
+
+<br>
 <details>
 <summary>Endpoints</summary>
 
-<span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks <br>
+<br>
 
--   Search for parks by name, state, type, and description. The program will search using keyword. <br>For example, `https://localhost:5001/api/Parks?description=murder` will return the result:
-    <pre><code>[
-        {
-            "parkId": 11,
-            "name": "Starved Rock State Park",
-            "state": "Illinois",
-            "type": "State",
-            "description": "Located near Utica, Starved Rock is one of Illinois' most famous nbspparks. It features scenic canyons, waterfalls, and hiking trails along the Illinois River. It is also the location of a famed murder mystery."
-        }
-    ]</code></pre>
-    <br>
-    <span style="color: green; font-style: italic;">POST</span> /api/parks
-    <br>
-    <span style="color: orange; font-style: italic;">PUT</span> /api/parks
-    <br>
-    <span style="color: red; font-style: italic;">DELETE</span> /api/parks
-    <br>
+### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks <br>
+
+-   Returns all parks (10 responses per page)
+
+### Search by parameter:
+
+Search for parks by name, state, type, and description. The program will search using keyword and return any Park where the keyword is found in the parameter. <br>For example, `https://localhost:5001/api/Parks?description=murder` will return the result:
+![example api response](img/description.png)
+
+### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/ <br>
+
+<pre><code>[
+{
+"parkId": 11,
+"name": "Starved Rock State Park",
+"state": "Illinois",
+"type": "State",
+"description": "Located near Utica, Starved Rock is one of Illinois' most famous nbspparks. It features scenic canyons, waterfalls, and hiking trails along the Illinois River. It is also the location of a famed murder mystery."
+}
+]</code></pre>
+<br>
+<span style="color: green; font-style: italic;">POST</span> /api/parks
+<br>
+<span style="color: orange; font-style: italic;">PUT</span> /api/parks
+<br>
+<span style="color: red; font-style: italic;">DELETE</span> /api/parks
+<br>
 
 </details>
 
