@@ -43,7 +43,7 @@ Use a tool like Postman or Swagger to access the Api. See below for documentatio
 <details>
 <summary> Database Setup </summary>
 
--   Use a MySql RDBMS (like MySql Workbench) to import/upload the **\_\_**.sql file and create your database.
+-   Use a MySql RDBMS (like MySql Workbench) to import/upload the casey_hill.sql file and create your database.
 -   In your ParksApi Directory, create a file with the name `appsettings.json` and copy and past the following code into this file:
 
     <pre><code>{
