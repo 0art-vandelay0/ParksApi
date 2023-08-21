@@ -112,6 +112,11 @@ Use a tool like Postman or Swagger to access the Api. See below for documentatio
 #### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks <br>
 
 -   Returns all parks (10 responses per page)
+-   To edit the amount of objects per page or get a different page use `page` and/or `pageSize`. Example: `http://localhost:5000/api/parks?page=2&pageSize=5`
+
+#### <span style="color: rgb(3, 132, 252); font-style: italic;">GET</span> /api/parks/random <br>
+
+-   Returns one Park object at random
 
 #### Query by parameter:
 
